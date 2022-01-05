@@ -32,28 +32,50 @@ public class Paddle extends Actor
 
     }    
 
+    
     public void setDirection(){
         if(Greenfoot.isKeyDown("w")){
             setRotation(270);
-            move(speed);
+            moveUp();
         }
         if(Greenfoot.isKeyDown("s")){
             setRotation(90);
-            move(speed);
+            moveDown();
         }
 
         if(Greenfoot.isKeyDown("a")){
             setRotation(180);
-            move(speed);
+            moveLeft();
         }
 
         if(Greenfoot.isKeyDown("d")){
             setRotation(0);
-            move(speed);
+            moveRight();
         }
         
     }
 
+    
+    private void moveUp(){
+        if(getY() >= 0+size/2){
+            move(speed);
+        }
+    }
+    private void moveLeft(){
+        if(getX() >= 0+size/2){
+            move(speed);
+        }
+    }
+    private void moveRight(){
+        if(getX() <= 600){ //replace this with the halfway point of the world
+            move(speed);
+        }
+    }
+    private void moveDown(){
+        if(getY() <= 800-size){ //replace this with the height of the world
+            move(speed);
+        }
+    }
     private void draw () 
     {
         image = new GreenfootImage(size,size); 
