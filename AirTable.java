@@ -33,13 +33,13 @@ public class AirTable extends Actor
         table.fillRect(width-10,0,width,height); //Right line
         
         //Left-side of table
-        table.fillRect(10, height/2 + 75, 70, 10);
-        table.fillRect(10, height/2 - 75, 70, 10);
+        table.fillRect(10, height/2 + 130, 70, 10);
+        table.fillRect(10, height/2 - 130, 70, 10);
         
         //Right-side of table
         table.setColor(Color.BLACK);
-        table.fillRect(width-90, height/2 + 75, width-20, 10);
-        table.fillRect(width-90, height/2 - 75, width-20, 10);
+        table.fillRect(width-90, height/2 + 130, width-20, 10);
+        table.fillRect(width-90, height/2 - 130, width-20, 10);
         
         return table;
     }
