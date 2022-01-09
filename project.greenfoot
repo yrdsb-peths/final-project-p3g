@@ -8,10 +8,7 @@ dependency2.type=UsesDependency
 dependency3.from=WelcomeWorld
 dependency3.to=ComputerMode
 dependency3.type=UsesDependency
-editor.fx.0.height=518
-editor.fx.0.width=760
-editor.fx.0.x=951
-editor.fx.0.y=313
+
 height=985
 package.numDependencies=3
 package.numTargets=6
@@ -37,7 +34,7 @@ target1.width=120
 target1.x=0
 target1.y=0
 target2.height=70
-target2.name=Paddle
+
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=120
@@ -74,5 +71,4 @@ target6.y=0
 version=3.0.0
 width=1462
 world.lastInstantiated=ComputerMode
-xPosition=0
-yPosition=20
+
