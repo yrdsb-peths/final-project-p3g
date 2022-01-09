@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Puck
+comment1.params=
+comment1.target=Puck()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=greenfoot.GreenfootImage\ drawPuck()
+comment4.params=
+comment4.target=void\ puckSpeed()
+numComments=5
