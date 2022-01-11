@@ -39,7 +39,7 @@ public class Paddle extends Actor
     private int vert = 0;
 
     public static int maxSpeed = 15;
-    public static int speed = 0;
+    public static int speed = 15;
     
     public static int timer = 0;
     
@@ -118,7 +118,7 @@ public class Paddle extends Actor
         }    
     }
     private void deaccelerate(){ //decreases speed evertime called, at certain intervals
-        if(timer%3==0 && speed>0){
+        if(timer%3==0 && speed>10){
             speed--;
         }
     }
@@ -165,11 +165,11 @@ public class Paddle extends Actor
                 }
             }
             //accelerates and deaccelerates (changes how fast the paddles move) based on how long any movement keys are held down for
-            //to prevent people from just staying still
-            accelerate();
+            //to prevent people from just staying still -- temporarily removed for convenience
+            //accelerate();
             move();
         }else{
-            deaccelerate();
+            //deaccelerate();
         }
     }
 
@@ -257,5 +257,12 @@ public class Paddle extends Actor
         image.setColor(Color.BLACK);
         image.fillRect(size/2,size/2-size/8,size/2,size/4);
         */
+    }
+    
+    public int getVert(){
+        return vert;
+    }
+    public int getHoriz(){
+        return hor;
     }
 }
