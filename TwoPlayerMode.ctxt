@@ -2,4 +2,10 @@
 comment0.target=TwoPlayerMode
 comment1.params=
 comment1.target=TwoPlayerMode()
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ puckMovement()
+comment4.params=
+comment4.target=void\ score()
+numComments=5
