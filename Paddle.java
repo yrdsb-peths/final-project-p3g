@@ -41,6 +41,8 @@ public class Paddle extends Actor
     public static int maxSpeed = 15;
     public static int speed = 0;
     
+    public static int timer = 0;
+    
     private static List<Puck> list = new ArrayList<Puck>(); 
     
     public Paddle(String type){ // "if using this constructor, please use (left,right, or cpu) as the parameters"
@@ -98,15 +100,28 @@ public class Paddle extends Actor
         if(!role.equals("cpu")){
             setDirection();
         } else {
-            chasePuck(); // for cpu -- if puck is on right half of world, chase, else return to a specified (or random) position
+            chasePuck(); 
         }
+        count();
     }    
 
-    private void accelerate(){
-        
-    
+    private void count(){ //helps control the rate that the speed increases and decreases
+        timer++;
+        if(timer==6){
+            timer = 0;
+        }
     }
     
+    private void accelerate(){ //increases speed everytime called, at certain intervals
+        if(timer == 0 && speed<maxSpeed){ 
+            speed++;
+        }    
+    }
+    private void deaccelerate(){ //decreases speed evertime called, at certain intervals
+        if(timer%3==0 && speed>0){
+            speed--;
+        }
+    }
     
     public void setDirection(){//sets rotation of paddle using keyboard, in 8 directions 
         if(Greenfoot.isKeyDown(up)){
@@ -149,17 +164,12 @@ public class Paddle extends Actor
                     setRotation(180+(int)Math.toDegrees(Math.atan(-vert/hor)));
                 }
             }
-            
-            //accelerates and deaccelerares (changes how fast the paddles move) based on how long any movement keys are held down for
+            //accelerates and deaccelerates (changes how fast the paddles move) based on how long any movement keys are held down for
             //to prevent people from just staying still
-            if(speed<maxSpeed){ 
-                speed++;
-            }
+            accelerate();
             move();
         }else{
-            if(speed>0){
-                speed--;
-            }
+            deaccelerate();
         }
     }
 
@@ -210,17 +220,21 @@ public class Paddle extends Actor
         }
     }
 
-    public void chasePuck(){
+    public void chasePuck(){// for cpu -- if puck is on right half of world, chase, else return to a specified (or random) position
         list = getWorld().getObjects(Puck.class);
         
         if(!list.isEmpty()){
             Puck puck = list.get(0);
             if(puck.getX() > leftBoundary){
+                //moves towards puck while accelerating
                 turnTowards(puck.getX(),puck.getY());
-                move(maxSpeed);
+                accelerate();
+                move(speed);
             } else {
                 int targetX = rightBoundary - size*2;
+                speed = 0; //resets speed 
                 
+                //heads to specified position -- can be random if it will be more fun?
                 turnTowards(targetX,arenaMidY);
                 if(getX() != targetX && getY()!= arenaMidY){
                     move(maxSpeed);
