@@ -206,4 +206,14 @@ public class Paddle extends Actor
         image.fillRect(size/2,size/2-size/8,size/2,size/4);
         */
     }
+    
+    public int getVert()
+    {
+        return vert;
+    }
+    
+    public int getHoriz()
+    {
+        return hor;
+    }
 }
