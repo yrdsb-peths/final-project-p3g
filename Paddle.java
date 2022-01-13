@@ -28,7 +28,7 @@ public class Paddle extends Actor
     private String right;
 
     private int topBoundary = size/2;
-    private int bottomBoundary = 800 - size; //replace 800 with height of world
+    private int bottomBoundary = 800 - size/2; //replace 800 with height of world
     private int leftBoundary;
     private int rightBoundary;
 
