@@ -18,6 +18,9 @@ public class TwoPlayerMode extends World
     GoalPost goalPostLeft = new GoalPost();
     GoalPost goalPostRight = new GoalPost();
     
+    private int leftScore;
+    private int rightScore;
+    
     public TwoPlayerMode()
     {
         //Size of the world
@@ -58,11 +61,25 @@ public class TwoPlayerMode extends World
         
         goalPostRight = new GoalPost();
         addObject(goalPostRight, 987, 400);
+        
+        leftScore = 0;
+        rightScore = 0;
     }
 
     public void act()
     {
-        puckMovement();        
+        puckMovement();   
+        if(leftScore == 7)
+        {
+            System.out.println("Left Paddle Wins!");
+        }
+        
+        if(rightScore == 7)
+        {
+            System.out.println("Right Paddle Wins!");
+        }
+
+        
     }
     
     public void puckMovement()
@@ -71,6 +88,8 @@ public class TwoPlayerMode extends World
         {
             puck.setHorizMovement(0);
             puck.setVertMovement(0);
+            leftScore++;
+            System.out.println("LeftScore: " + leftScore);
             puck.setLocation(600,400);
             puck.setGoalCheck(false);
         }
@@ -78,14 +97,12 @@ public class TwoPlayerMode extends World
         {
             puck.setHorizMovement(0);
             puck.setVertMovement(0);
+            rightScore++;
+            System.out.println("rightScore: " + rightScore);
             puck.setLocation(600,400);
             puck.setGoalCheck(false);
         }
 
     }
-    
-    public void score()
-    {
-        
-    }
+
 }
