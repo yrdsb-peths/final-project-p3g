@@ -72,14 +72,14 @@ public class TwoPlayerMode extends World
         if(leftScore == 7)
         {
             System.out.println("Left Paddle Wins!");
+            Greenfoot.setWorld(new TwoPlayerEndScreen("Left Paddle", leftScore, rightScore));
         }
         
         if(rightScore == 7)
         {
             System.out.println("Right Paddle Wins!");
+            Greenfoot.setWorld(new TwoPlayerEndScreen("Right Paddle", leftScore, rightScore));
         }
-
-        
     }
     
     public void puckMovement()
