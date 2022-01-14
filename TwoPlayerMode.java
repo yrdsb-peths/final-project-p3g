@@ -18,6 +18,9 @@ public class TwoPlayerMode extends World
     GoalPost goalPostLeft = new GoalPost();
     GoalPost goalPostRight = new GoalPost();
     
+    private GreenfootSound TwoPlayerMusic = new GreenfootSound("Mii Remix.mp3");
+    private GreenfootSound puckSound = new GreenfootSound("Puck Sound.mp3");
+    
     private int leftScore;
     private int rightScore;
     
@@ -66,16 +69,30 @@ public class TwoPlayerMode extends World
         rightScore = 0;
     }
 
+    public void startMusic()
+    {
+        TwoPlayerMusic.playLoop();
+    }
+    
+    public void stopMusic()
+    {
+        TwoPlayerMusic.stop();
+    }
+    
     public void act()
     {
+        startMusic();
         puckMovement();   
+        
         if(leftScore == 7)
         {
+            stopMusic();
             Greenfoot.setWorld(new TwoPlayerEndScreen("Left Paddle", leftScore, rightScore));
         }
         
         if(rightScore == 7)
         {
+            stopMusic();
             Greenfoot.setWorld(new TwoPlayerEndScreen("Right Paddle", leftScore, rightScore));
         }
     }
