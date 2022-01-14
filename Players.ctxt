@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Players
+comment0.text=\r\n\ striker\ movement\ code\ needed\ to\ be\ in\ their\ class\ for\ center\ boundry\r\n\ \r\n\ \r\n
+comment1.params=
+comment1.target=Players()
+comment1.text=\r\n\ Constructor.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Players\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=int\ getScore()
+comment3.text=\r\n\ get\ the\ score\r\n
+comment4.params=points
+comment4.target=void\ addScore(int)
+comment4.text=\r\n\ add\ 1\ to\ the\ score\r\n
+numComments=5

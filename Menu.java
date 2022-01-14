@@ -60,7 +60,7 @@ public class Menu extends World
         if (Greenfoot.mouseClicked(playerButton))
         {
             stopped();
-            Greenfoot.setWorld(new GameWorld());
+            Greenfoot.setWorld(new MyWorld());
         }
         
         if(Greenfoot.mouseClicked(computerButton))

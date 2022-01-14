@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=StrikerBoundry
+comment0.text=\r\n\ Boundry\ down\ the\ center\ of\ the\ table\ that\ the\ Players\ cannot\ pass\r\n\ also\ becomes\ invisible\ when\ the\ game\ is\ started\r\n\ \r\n\r\n
+comment1.params=
+comment1.target=StrikerBoundry()
+comment1.text=\r\n\ make\ the\ center\ line\ invisible\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ StrikerBoundry\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=3

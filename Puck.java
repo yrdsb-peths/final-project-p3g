@@ -1,121 +1,123 @@
-import greenfoot.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Puck extends Actor  
+/**
+ * The puck is what the strikers hit and can be scored
+ * all the real code is in here 
+ *
+ * Credit to Matthew Lindsey
+ **/
+public class Puck extends Actor
 {
-    private GreenfootImage puck;
+    public int Xcord;
+    public int Ycord;
+    public int Player1Points;
+    public int Player2Points;
+    Striker myStriker = new Striker();
+    Striker2 myStriker2 = new Striker2();
     
-    public int xSpeed;
-    public int ySpeed;
-    
-    private boolean touchedPaddle;
-    private boolean passedGoal;
-    
-    private int handleActTimer;
-    
-    public Puck()
+    /**
+     * Act - do whatever the Puck wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
     {
-        puck = drawPuck();
-        setImage(puck);
-        
-        this.touchedPaddle = false;
-        this.passedGoal = false;
-    }
-    
-    public void act()
-    {
-        bounceMovements();
-    }
-    
-    private GreenfootImage drawPuck()
-    {
-        puck = new GreenfootImage(50,50);
-        
-        puck.setColor(Color.BLACK);
-        puck.fillOval(0,0,50,50);
-        
-        return puck;
-    }
-    
-    private void bounceMovements()
-    {
-        Actor TableBorder;
-        Actor TableBorderSmall;
-        Actor Paddle;
-        Actor GoalPost;
-        
-        TableBorder = getOneIntersectingObject(TableBorder.class);
-        TableBorderSmall = getOneIntersectingObject(TableBorderSmall.class);
-        Paddle = getOneIntersectingObject(Paddle.class);
-        try {
-            Paddle p = (Paddle) Paddle;
-            if(Paddle != null)
-            {
-                //horizMovement = horizMovement + 5;
-                //vertMovement = getY() - Paddle.getY();
-                //vertMovement = vertMovement/10;
-                int vertDir = p.getVert();
-                int horizDir = p.getHoriz();
-                
-                xSpeed = (p.maxSpeed * horizDir) - xSpeed;
-                
-                ySpeed = ySpeed - (p.maxSpeed * vertDir / 2);
-                int yDir = Integer.signum(ySpeed);
-                ySpeed = Math.min(Math.abs(ySpeed), 9) * yDir;
-                
-            }
-        }
-        catch(ClassCastException e)
+        /** 
+         * speed limiter slows down the game, movement is imited to 13 
+         * pixels per act
+         */
+        if(Xcord > 13)
         {
-            
+            Xcord =13;
         }
-                       
-        GoalPost = getOneIntersectingObject(GoalPost.class);
-        
-        if(TableBorder != null)
+        if(Ycord > 13)
         {
-            ySpeed = - ySpeed;
+            Ycord =13;
         }
-        
-        if(TableBorderSmall != null)
-        {
-            xSpeed = - xSpeed;
-        }
-    
-        
-        if(GoalPost != null)
-        {
-            passedGoal = true;
-        } 
-        setLocation(getX() + xSpeed, getY() + ySpeed);
-    }
 
-    public boolean goalCheck()
+        bounce();
+        movement();
+        scoring();
+        
+        
+        
+    }    
+    
+    
+    
+    /**
+     * bounces off of the edge of the map
+     */
+    public void bounce()
     {
-        return passedGoal;
+        if( isAtEdge() )
+        {
+            Ycord = -Ycord;
+        }
+        Actor PuckBoundry;
+        PuckBoundry = getOneIntersectingObject(PuckBoundry.class);
+        if (PuckBoundry != null)
+        {
+            Xcord = -Xcord;
+        }
     }
     
-    public void setGoalCheck(boolean passedGoal)
+    /**
+     * puck movement location of puck +/- location of the striker to get
+     * the proper angle
+     */
+    public void movement()
     {
-         this.passedGoal = passedGoal;
+        Actor Striker;
+        Striker = getOneIntersectingObject(Striker.class);
+        if (Striker != null)
+        {
+            Xcord = Xcord +5;
+            Ycord = getY() - Striker.getY();
+            Ycord = Ycord/10;
+        }
+        
+        Actor Striker2;
+        Striker2 = getOneIntersectingObject(Striker2.class);
+        if (Striker2 != null)
+        {
+            Xcord = Xcord -5;
+            Ycord = getY() - Striker2.getY();
+            Ycord = Ycord/10;
+        }
+        setLocation( getX() + Xcord, getY() + Ycord);
     }
     
-    public int getHorizMovement()
-    {
-        return this.xSpeed;
-    }
     
-    public void setHorizMovement(int horizMovement)
+    /**
+    * goal code resets puck and gives points to the player
+    */
+    public void scoring()
     {
-        this.xSpeed = horizMovement;
-    }
-    
-    public int getVertMovement()
-    {
-        return this.ySpeed;
-    }
-    
-    public void setVertMovement(int verticalMovement)
-    {
-        this.ySpeed = verticalMovement;
+
+        if (getX() < 10)
+        {
+            Xcord = -1;
+            Ycord = 0;
+            Player1Points = Player1Points + 1;
+        }
+        
+        
+        if (getX() > 690)
+        {
+            Xcord = 1;
+            Ycord = 0;
+            Player2Points = Player2Points + 1;
+        }
+        /**
+         * point counter
+         */
+        if(Player1Points == 7)
+        {
+            Greenfoot.stop();
+        }
+        if(Player2Points == 7)
+        {
+            Greenfoot.stop();
+        }
     }
 }

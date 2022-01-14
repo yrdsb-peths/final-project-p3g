@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Striker
+comment0.text=\r\n\ just\ has\ the\ movement\ code\ and\ code\ to\ not\ cross\ the\ center\r\n\ \r\n\ \r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Striker\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ movement()
+comment2.text=\r\n\ wsad\ movement\r\n
+numComments=3
