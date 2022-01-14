@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=PuckBoundry
-comment0.text=\r\n\ Boundry\ for\ the\ puck\ to\ bunce\ off\ of\ the\ x\ axis\ above\ and\ below\ the\ goals\r\n\ code\ is\ in\ puck\r\n\ \r\n\r\n
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ PuckBoundry\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
