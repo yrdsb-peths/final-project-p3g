@@ -19,7 +19,6 @@ public class TwoPlayerMode extends World
     GoalPost goalPostRight = new GoalPost();
     
     private GreenfootSound TwoPlayerMusic = new GreenfootSound("Mii Remix.mp3");
-    private GreenfootSound puckSound = new GreenfootSound("Puck Sound.mp3");
     
     private int leftScore;
     private int rightScore;
