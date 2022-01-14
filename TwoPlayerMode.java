@@ -68,30 +68,30 @@ public class TwoPlayerMode extends World
         rightScore = 0;
     }
 
-    public void startMusic()
+    public void started()
     {
         TwoPlayerMusic.playLoop();
     }
     
-    public void stopMusic()
+    public void stopped()
     {
         TwoPlayerMusic.stop();
     }
     
     public void act()
     {
-        startMusic();
+        started();
         puckMovement();   
         
         if(leftScore == 7)
         {
-            stopMusic();
+            stopped();
             Greenfoot.setWorld(new TwoPlayerEndScreen("Left Paddle", leftScore, rightScore));
         }
         
         if(rightScore == 7)
         {
-            stopMusic();
+            stopped();
             Greenfoot.setWorld(new TwoPlayerEndScreen("Right Paddle", leftScore, rightScore));
         }
     }
