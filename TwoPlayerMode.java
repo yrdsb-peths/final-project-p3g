@@ -71,13 +71,11 @@ public class TwoPlayerMode extends World
         puckMovement();   
         if(leftScore == 7)
         {
-            System.out.println("Left Paddle Wins!");
             Greenfoot.setWorld(new TwoPlayerEndScreen("Left Paddle", leftScore, rightScore));
         }
         
         if(rightScore == 7)
         {
-            System.out.println("Right Paddle Wins!");
             Greenfoot.setWorld(new TwoPlayerEndScreen("Right Paddle", leftScore, rightScore));
         }
     }
@@ -89,7 +87,10 @@ public class TwoPlayerMode extends World
             puck.setHorizMovement(0);
             puck.setVertMovement(0);
             leftScore++;
-            System.out.println("LeftScore: " + leftScore);
+            
+            //ScoreBar will replace the system printing
+            //System.out.println("LeftScore: " + leftScore); 
+            
             puck.setLocation(600,400);
             puck.setGoalCheck(false);
         }
@@ -98,7 +99,11 @@ public class TwoPlayerMode extends World
             puck.setHorizMovement(0);
             puck.setVertMovement(0);
             rightScore++;
-            System.out.println("rightScore: " + rightScore);
+            
+            //ScoreBar will replace the system printing
+            //System.out.println("rightScore: " + rightScore);
+            
+            
             puck.setLocation(600,400);
             puck.setGoalCheck(false);
         }
