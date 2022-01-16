@@ -117,6 +117,11 @@ public class TwoPlayerMode extends World
             stopped();
             Greenfoot.setWorld(new TwoPlayerEndScreen("Right Paddle", leftScore, rightScore));
         }
+        
+        if(Greenfoot.mouseClicked(goBack))
+        {
+            Greenfoot.setWorld(new WelcomeWorld());
+        }
     }
     
     public void puckMovement()
