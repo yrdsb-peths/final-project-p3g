@@ -2,24 +2,25 @@ import greenfoot.*;
 
 public class TwoPlayerMode extends World  
 {
-    AirTable table = new AirTable();
-    Puck puck = new Puck();
+    private AirTable table = new AirTable();
+    private Puck puck = new Puck();
     
-    TableBorder border1 = new TableBorder();
-    TableBorder border2 = new TableBorder();
-    TableBorderSmall border3 = new TableBorderSmall();
-    TableBorderSmall border4 = new TableBorderSmall();
-    TableBorderSmall border5 = new TableBorderSmall();
-    TableBorderSmall border6 = new TableBorderSmall();
+    private TableBorder border1; 
+    private TableBorder border2; 
+    private TableBorderSmall border3;
+    private TableBorderSmall border4;
+    private TableBorderSmall border5;
+    private TableBorderSmall border6;
     
-    Paddle paddle1 = new Paddle();
-    Paddle paddle2 = new Paddle();
+    private Paddle paddle1;
+    private Paddle paddle2;
     
-    GoalPost goalPostLeft = new GoalPost();
-    GoalPost goalPostRight = new GoalPost();
+    private GoalPost goalPostLeft;
+    private GoalPost goalPostRight;
     
     private Button leftScoreDisplay;
     private Button rightScoreDisplay;
+    
     
     private GreenfootSound TwoPlayerMusic = new GreenfootSound("Mii Remix.mp3");
     
@@ -67,8 +68,10 @@ public class TwoPlayerMode extends World
         goalPostRight = new GoalPost();
         addObject(goalPostRight, 987, 400);
         
+        
+        
         leftScoreShown();
-        rightScoreShown();    
+        rightScoreShown(); 
         
         leftScore = 0;
         rightScore = 0;
