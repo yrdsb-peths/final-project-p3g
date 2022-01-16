@@ -18,6 +18,9 @@ public class TwoPlayerMode extends World
     GoalPost goalPostLeft = new GoalPost();
     GoalPost goalPostRight = new GoalPost();
     
+    private Button leftScoreDisplay;
+    private Button rightScoreDisplay;
+    
     private GreenfootSound TwoPlayerMusic = new GreenfootSound("Mii Remix.mp3");
     
     private int leftScore;
@@ -64,10 +67,25 @@ public class TwoPlayerMode extends World
         goalPostRight = new GoalPost();
         addObject(goalPostRight, 987, 400);
         
+        leftScoreShown();
+        rightScoreShown();    
+        
         leftScore = 0;
         rightScore = 0;
     }
 
+    public void leftScoreShown()
+    {
+        leftScoreDisplay = new Button("Left Score:" + Integer.toString(leftScore));
+        addObject(leftScoreDisplay, 300, 50);
+    }
+    
+    public void rightScoreShown()
+    {
+        rightScoreDisplay = new Button("Right Score:" + Integer.toString(rightScore));
+        addObject(rightScoreDisplay, 900, 50);
+    }
+    
     public void started()
     {
         TwoPlayerMusic.playLoop();
@@ -102,11 +120,13 @@ public class TwoPlayerMode extends World
         {
             puck.setHorizMovement(0);
             puck.setVertMovement(0);
+            
             leftScore++;
+            leftScoreShown();
             
-            //ScoreBar will replace the system printing
-            //System.out.println("LeftScore: " + leftScore); 
-            
+            leftScoreDisplay = new Button("Left Score:" + Integer.toString(leftScore));
+            addObject(leftScoreDisplay, 300, 50);
+        
             puck.setLocation(600,400);
             puck.setGoalCheck(false);
         }
@@ -114,16 +134,12 @@ public class TwoPlayerMode extends World
         {
             puck.setHorizMovement(0);
             puck.setVertMovement(0);
+            
             rightScore++;
-            
-            //ScoreBar will replace the system printing
-            //System.out.println("rightScore: " + rightScore);
-            
+            rightScoreShown();
             
             puck.setLocation(600,400);
             puck.setGoalCheck(false);
         }
-
     }
-
 }
