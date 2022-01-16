@@ -21,6 +21,7 @@ public class TwoPlayerMode extends World
     private Button leftScoreDisplay;
     private Button rightScoreDisplay;
     
+    private Button goBack;
     
     private GreenfootSound TwoPlayerMusic = new GreenfootSound("Mii Remix.mp3");
     
@@ -68,7 +69,8 @@ public class TwoPlayerMode extends World
         goalPostRight = new GoalPost();
         addObject(goalPostRight, 987, 400);
         
-        
+        goBack = new Button("<-- Go Back");
+        addObject(goBack, 100, 750);
         
         leftScoreShown();
         rightScoreShown(); 
