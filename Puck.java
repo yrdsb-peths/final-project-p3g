@@ -12,6 +12,8 @@ public class Puck extends Actor
     
     private int handleActTimer;
     
+    private GreenfootSound puckSound = new GreenfootSound("Puck Sound.mp3");
+    
     public Puck()
     {
         puck = drawPuck();
@@ -50,6 +52,8 @@ public class Puck extends Actor
             Paddle p = (Paddle) Paddle;
             if(Paddle != null)
             {
+                puckSound.play();
+                
                 //horizMovement = horizMovement + 5;
                 //vertMovement = getY() - Paddle.getY();
                 //vertMovement = vertMovement/10;
