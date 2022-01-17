@@ -12,7 +12,6 @@ public class InstructionsWorld extends World
 {
     private GreenfootImage background;
     private Button returnButton;
-    private Button beginButton;
     private Font comicFont = new Font ("Courier New", true, false, 60);
     
     /**
@@ -26,19 +25,18 @@ public class InstructionsWorld extends World
         super(800, 600, 1); 
         
         //Set instruction world 
-        background = new GreenfootImage("table.png");   
-        setBackground(background);
-        background.setFont(comicFont);
+        //background = new GreenfootImage("table.png");   
+        //setBackground(background);
+        //background.setFont(comicFont);
         //Draw instruction title
-        background.setColor(Color.WHITE);
-        background.drawString ("Instructions",170, 70);
+        //background.setColor(Color.WHITE);
+        //background.drawString ("Instructions",170, 70);
         
         //Draw two buttons
         returnButton = new Button ("<-- Go Back");
         
         //Set location for buttons
         addObject(returnButton, 100, 570);
-        addObject(beginButton, 700, 570);
     }
     
     public void act () 

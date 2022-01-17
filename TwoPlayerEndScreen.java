@@ -79,7 +79,7 @@ public class TwoPlayerEndScreen extends World
         //If the goBack button is pressed, go back to WelcomeWorld
         if(Greenfoot.mouseClicked(goBackButton))        
         {
-            //Greenfoot.setWorld(new WelcomeWorld());
+            Greenfoot.setWorld(new WelcomeWorld());
         }
         
         if(Greenfoot.mouseClicked(playAgainButton))        
