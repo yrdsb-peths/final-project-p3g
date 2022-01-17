@@ -6,6 +6,7 @@ public class WelcomeWorld extends World
     private Button computerButton;
     private Button instructionsButton;
     private GreenfootImage background;
+    private GreenfootSound WelcomeMusic = new GreenfootSound("Jump Up, Super Start Remix Super Mario Odyssey.mp3");
     
     //private Font comicFont = new Font ("Courier New", true, false, 60);
     
@@ -40,6 +41,16 @@ public class WelcomeWorld extends World
         checkMouse();
     }
 
+    public void started()
+    {
+        WelcomeMusic.playLoop();
+    }
+    
+    public void stopped()
+    {
+        WelcomeMusic.stop();
+    }
+    
     private void checkMouse() 
     {
         if (Greenfoot.mouseClicked(instructionsButton))
