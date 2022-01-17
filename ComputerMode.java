@@ -29,6 +29,12 @@ public class ComputerMode extends World
         
         scoreBar.update(playerScore, computerScore, totalScore);
         
+        //Testing to see how numbers changes (delete this when fully implementing the score system)
+        playerScore += 2; 
+        computerScore++;
+        totalScore = playerScore - computerScore;
+        
+        
         if(Greenfoot.mouseClicked(goBackButton))
         {
             stopped();
