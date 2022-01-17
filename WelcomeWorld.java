@@ -7,7 +7,7 @@ public class WelcomeWorld extends World
     private Button instructionsButton;
     private GreenfootImage background;
     
-    private Font comicFont = new Font ("Courier New", true, false, 60);
+    //private Font comicFont = new Font ("Courier New", true, false, 60);
     
     /**
      * Constructor for objects of class WelcomeWorld.
@@ -18,16 +18,16 @@ public class WelcomeWorld extends World
     {    
        super(800, 600, 1); 
 
-       background.setFont(comicFont);
-       background.setColor(Color.WHITE);
-       background.drawString ("Air Hockey",200, 200);
-       setBackground(background);
+       //background.setFont(comicFont);
+       //background.setColor(Color.WHITE);
+       //background.drawString ("Air Hockey",200, 200);
+       //setBackground(background);
        
        twoPlayerButton = new Button("Two-Player");
        addObject(twoPlayerButton, 200, 400);
        
-       computerButton = new Button("Computer");
-       addObject(twoPlayerButton, 600, 400);
+       computerButton = new Button("Computer Mode");
+       addObject(computerButton, 600, 400);
 
        instructionsButton = new Button("Instructions");
        addObject(instructionsButton, 400, 500);
