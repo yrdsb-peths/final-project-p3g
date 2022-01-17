@@ -65,10 +65,10 @@ public class WelcomeWorld extends World
             Greenfoot.setWorld(new TwoPlayerMode());
         }
         
-        if(Greenfoot.mouseClicked(instructionsButton))
+        if(Greenfoot.mouseClicked(computerButton))
         {
             stopped();
-            Greenfoot.setWorld(new InstructionsWorld());
+            Greenfoot.setWorld(new ComputerMode());
         }
     }
 }
