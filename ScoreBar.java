@@ -67,7 +67,7 @@ public class ScoreBar extends Actor
         computerPoints = zeroAdder (computerScore, 3);
         totalPoints = zeroAdder (totalScore, 3);
         
-        text = "Player Score: " +  playerPoints + "Computer Score " + computerPoints + "Total Score: " + totalPoints;
+        text = "Player Score: " +  playerPoints + "   Computer Score " + computerPoints + "   Total Score: " + totalPoints;
         this.update (text); 
     }
 
