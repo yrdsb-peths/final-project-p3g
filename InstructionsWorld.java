@@ -14,6 +14,8 @@ public class InstructionsWorld extends World
     private Button returnButton;
     private Font comicFont = new Font ("Courier New", true, false, 60);
     
+    private GreenfootSound InstructionsMusic = new GreenfootSound("CP - Pizza Parlor.mp3");
+    
     /**
      * Constructor for objects of class InstructionWorld.
      * 
@@ -43,6 +45,16 @@ public class InstructionsWorld extends World
     {
         started();
         checkMouse();
+    }
+    
+    public void started () 
+    {
+        InstructionsMusic.playLoop();
+    }
+    
+    public void stopped () 
+    {
+        InstructionsMusic.pause();
     }
     
     private void checkMouse() 
