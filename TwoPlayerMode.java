@@ -117,11 +117,14 @@ public class TwoPlayerMode extends World
             stopped();
             Greenfoot.setWorld(new TwoPlayerEndScreen("Right Paddle", leftScore, rightScore));
         }
+<<<<<<< HEAD
         
         if(Greenfoot.mouseClicked(goBack))
         {
             //Greenfoot.setWorld(new WelcomeWorld());
         }
+=======
+>>>>>>> parent of 650161a (goBack Button mouseclick option added)
     }
     
     public void puckMovement()
