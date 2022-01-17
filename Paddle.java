@@ -262,6 +262,7 @@ public class Paddle extends Actor
     public int getVert(){
         return vert;
     }
+    
     public int getHoriz(){
         return hor;
     }
