@@ -59,7 +59,7 @@ public class InstructionsWorld extends World
         if(Greenfoot.mouseClicked(beginButton))
         {
             stopped();
-            Greenfoot.setWorld(new GameWorld());
+            //Greenfoot.setWorld(new GameWorld());
         }
     }
     

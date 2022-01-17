@@ -47,7 +47,7 @@ public class WelcomeWorld extends World
         if(Greenfoot.mouseClicked(startButton))
         {
             stopped();
-            Greenfoot.setWorld(new Menu());
+            //Greenfoot.setWorld(new Menu());
         }
     }
 }

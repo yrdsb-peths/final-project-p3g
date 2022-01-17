@@ -2,7 +2,6 @@ import greenfoot.*;
 
 public class ComputerMode extends World  
 {
-    Puck puck = new Puck();
     
     public ComputerMode()
     {
