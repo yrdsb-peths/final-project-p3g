@@ -43,6 +43,7 @@ public class WelcomeWorld extends World
 
     public void started()
     {
+        WelcomeMusic.setVolume(60);
         WelcomeMusic.playLoop();
     }
     
