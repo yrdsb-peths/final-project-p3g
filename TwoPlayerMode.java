@@ -120,6 +120,7 @@ public class TwoPlayerMode extends World
         
         if(Greenfoot.mouseClicked(goBack))
         {
+            stopped();
             Greenfoot.setWorld(new WelcomeWorld());
         }
     }
