@@ -34,8 +34,7 @@ public class InstructionsWorld extends World
         background.drawString ("Instructions",170, 70);
         
         //Draw two buttons
-        returnButton = new Button ("Back");
-        beginButton = new Button ("Begin");
+        returnButton = new Button ("<-- Go Back");
         
         //Set location for buttons
         addObject(returnButton, 100, 570);
@@ -54,12 +53,6 @@ public class InstructionsWorld extends World
         {
             stopped();
             Greenfoot.setWorld(new WelcomeWorld());
-        }
-        
-        if(Greenfoot.mouseClicked(beginButton))
-        {
-            stopped();
-            //Greenfoot.setWorld(new GameWorld());
         }
     }
     
