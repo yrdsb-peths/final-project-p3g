@@ -2,7 +2,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class WelcomeWorld extends World
 {
-    private Button startButton;
+    private Button twoPlayerButton;
+    private Button computerButton;
     private Button instructionsButton;
     private GreenfootImage background;
     
@@ -22,11 +23,14 @@ public class WelcomeWorld extends World
        background.drawString ("Air Hockey",200, 200);
        setBackground(background);
        
-       startButton = new Button ("Play");
-       addObject(startButton, 200, 500);
+       twoPlayerButton = new Button("Two-Player");
+       addObject(twoPlayerButton, 200, 400);
+       
+       computerButton = new Button("Computer");
+       addObject(twoPlayerButton, 600, 400);
 
-       instructionsButton = new Button ("Instructions");
-       addObject(instructionsButton, 600, 500);
+       instructionsButton = new Button("Instructions");
+       addObject(instructionsButton, 400, 500);
 
     }
     
@@ -44,10 +48,16 @@ public class WelcomeWorld extends World
             Greenfoot.setWorld(new InstructionsWorld());
         }
         
-        if(Greenfoot.mouseClicked(startButton))
+        if(Greenfoot.mouseClicked(twoPlayerButton))
         {
             stopped();
-            //Greenfoot.setWorld(new Menu());
+            Greenfoot.setWorld(new TwoPlayerMode());
+        }
+        
+        if(Greenfoot.mouseClicked(instructionsButton))
+        {
+            stopped();
+            Greenfoot.setWorld(new InstructionsWorld());
         }
     }
 }
