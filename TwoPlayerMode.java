@@ -53,7 +53,7 @@ public class TwoPlayerMode extends World
     public TwoPlayerMode()
     {
         //Size of the world (Cell by Cell)
-        super(1200, 800, 1); 
+        super(WORLD_LENGTH, WORLD_HEIGHT, 1); 
         
         //Placing the Airtable in the world
         table = new AirTable();
