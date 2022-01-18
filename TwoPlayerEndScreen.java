@@ -1,10 +1,8 @@
 import greenfoot.*;
 
 /**
- * Write a description of class TwoPlayerEndScreen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A world that displays the stats and scores from the TwoPlayerMode World
+ * after one of the player gets a score of 7.
  */
 public class TwoPlayerEndScreen extends World 
 {
@@ -34,6 +32,7 @@ public class TwoPlayerEndScreen extends World
      */
     public TwoPlayerEndScreen(String winner, int leftScore, int rightScore)
     {
+        //Size of the World (Cell by Cell)
         super(800, 600, 1); 
         
         //To go back to the screen or play again
@@ -62,7 +61,7 @@ public class TwoPlayerEndScreen extends World
         rightPaddleScore = new Button("Score: " + Integer.toString(rightScore));
         addObject(rightPaddleScore, 600, 150);
         
-        //Button to indicate the winner
+        //Buttons (used as texts) to indicate the winner
         textOne = new Button("The Winner");
         addObject(textOne,400,250);
                 
@@ -76,12 +75,13 @@ public class TwoPlayerEndScreen extends World
 
     public void act()
     {
-        //If the goBack button is pressed, go back to WelcomeWorld
+        //If the goBackBbutton is pressed, go back to WelcomeWorld
         if(Greenfoot.mouseClicked(goBackButton))        
         {
             Greenfoot.setWorld(new WelcomeWorld());
         }
         
+        //If playAgainButton is pressed, create a new TwoPlayerMode world
         if(Greenfoot.mouseClicked(playAgainButton))        
         {
             Greenfoot.setWorld(new TwoPlayerMode());

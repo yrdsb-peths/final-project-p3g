@@ -3,17 +3,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * InstructionsWorld
  * -Gives a breif explanation of how the game should be played
- * -beginButton starts the game (GameWorld)
- * -returnButton goes back to the main menu (WelcomeWorld)
  * 
+ * Credit
+ * -CP - Pizza Parlor --Youtube Tite--> Club Penguin Music - Pizza Parlor --Link--> https://www.youtube.com/watch?v=srNKLDAt3Pk
  *
  */
 public class InstructionsWorld extends World
 {
+    //Background Image
     private GreenfootImage background;
-    private Button returnButton;
-    private Font comicFont = new Font ("Courier New", true, false, 60);
     
+    //World transitions
+    private Button returnButton;
+    
+    //private Font comicFont = new Font ("Courier New", true, false, 60);
+    
+    //Background Song
     private GreenfootSound InstructionsMusic = new GreenfootSound("CP - Pizza Parlor.mp3");
     
     /**
@@ -23,7 +28,7 @@ public class InstructionsWorld extends World
     
     public InstructionsWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        //Size of the world (Cell by Cell)
         super(800, 600, 1); 
         
         //Set instruction world 
@@ -41,23 +46,23 @@ public class InstructionsWorld extends World
         addObject(returnButton, 100, 570);
     }
     
-    public void act () 
+    public void act() 
     {
-        started();
-        checkMouse();
+        started(); //Loops music
+        checkMouse(); //Checks if the user wants to leave InstructionsWorld
     }
     
-    public void started () 
+    public void started() //Method that loops the music
     {
         InstructionsMusic.playLoop();
     }
     
-    public void stopped () 
+    public void stopped() //Method that stops the music
     {
         InstructionsMusic.pause();
     }
     
-    private void checkMouse() 
+    private void checkMouse() //Stops music and goes back to WelcomeWorld
     {
         if (Greenfoot.mouseClicked(returnButton))
         {
