@@ -10,7 +10,7 @@ public class AirTable extends Actor
     
     private GreenfootImage image;
    
-    private int width = 800;
+    public int width = ComputerMode.WORLD_LENGTH;
     private int height = 600;
     
     private GreenfootImage table = new GreenfootImage(width,height);
@@ -49,12 +49,12 @@ public class AirTable extends Actor
         table.setColor(lines);
          
         table.fillOval(-70, height/2 - 90, 140,180);
-        table.fillOval(730, height/2 - 90, 140,180);
+        table.fillOval(width-70, height/2 - 90, 140,180);
         
         table.setColor(rink);
         
         table.fillOval(-63, height/2 - 81, 126,162);
-        table.fillOval(737, height/2 - 81, 126,162);
+        table.fillOval(width-63, height/2 - 81, 126,162);
         
         /**
         //Left-side of table
@@ -79,9 +79,9 @@ public class AirTable extends Actor
         table.setColor(lines);
         table.fillOval(x-radius/8,y-radius/8,radius/4,radius/4);
         
-        drawCircles(N-1,x-radius,y-radius*3/4,radius/2);
-        drawCircles(N-1,x-radius,y+radius*3/4,radius/2);
-        drawCircles(N-1,x+radius,y-radius*3/4,radius/2);
-        drawCircles(N-1,x+radius,y+radius*3/4,radius/2);
+        drawCircles(N-1,x-x/2,y-radius*3/4,radius/2);
+        drawCircles(N-1,x-x/2,y+radius*3/4,radius/2);
+        drawCircles(N-1,x+x/2,y-radius*3/4,radius/2);
+        drawCircles(N-1,x+x/2,y+radius*3/4,radius/2);
     }
 }

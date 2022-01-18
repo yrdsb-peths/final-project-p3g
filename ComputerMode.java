@@ -9,6 +9,9 @@ public class ComputerMode extends World
  * -Super Smash Bros Remix --YouTube Title--> Super Smash Bros Ultimate - Lifelight (Remix feat. Slyleaf)--Link--> https://www.youtube.com/watch?v=V7EJrOIm6Ro
  */
 {  
+    public static int WORLD_LENGTH = 1200;
+    public static int WORLD_HEIGHT = 800;
+    
     //Background Song
     private GreenfootSound ComputerModeMusic = new GreenfootSound("Super Smash Bros Remix.mp3");
     
@@ -34,6 +37,8 @@ public class ComputerMode extends World
         //Placing the goBackButton
         goBackButton = new Button ("<-- Go Back");
         addObject(goBackButton, 100, 750);
+        
+        
     }
     
     public void act()

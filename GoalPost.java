@@ -18,9 +18,9 @@ public class GoalPost extends Actor
 
     private GreenfootImage drawLine() //Draws the image
     {
-        GreenfootImage line = new GreenfootImage (25, 180);
+        GreenfootImage line = new GreenfootImage (10, 180);
         line.setColor(Color.MAGENTA);
-        line.fillRect(0,0,25,180);
+        line.fillRect(0,0,10,180);
         
         return line;
     }

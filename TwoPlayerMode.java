@@ -11,6 +11,9 @@ public class TwoPlayerMode extends World
  * -Mii Remix --Youtube Tite--> NINTENDO Mii THEME (TRAP REMIX) - VANDER --Link--> https://www.youtube.com/watch?v=xTKVcAeTxtE
  */
 {
+    public static int WORLD_LENGTH = 1200;
+    public static int WORLD_HEIGHT = 800;
+    
     //AirTable
     private AirTable table = new AirTable();
     
@@ -69,29 +72,29 @@ public class TwoPlayerMode extends World
         
         //Placing the AirTable borders in the World
         border1 = new TableBorder();
-        addObject(border1, 600, 110);
+        addObject(border1, WORLD_LENGTH/2, 110);
     
         border2 = new TableBorder();
-        addObject(border2, 600, 690);
+        addObject(border2, WORLD_LENGTH/2, 690);
         
         border3 = new TableBorderSmall();
-        addObject(border3, 212, 211);
+        addObject(border3, 10, 211);
         
         border4 = new TableBorderSmall();
-        addObject(border4, 212, 590);
+        addObject(border4, 10, 590);
         
         border5 = new TableBorderSmall();
-        addObject(border5, 987, 211);
+        addObject(border5, WORLD_LENGTH-10, 211);
         
         border6 = new TableBorderSmall();
-        addObject(border6, 987, 590);
+        addObject(border6, WORLD_LENGTH-10, 590);
         
         //Placing the Airtable goal posts in the world
         goalPostLeft = new GoalPost();
-        addObject(goalPostLeft, 212, 400);
+        addObject(goalPostLeft, 0, 400);
         
         goalPostRight = new GoalPost();
-        addObject(goalPostRight, 987, 400);
+        addObject(goalPostRight, WORLD_LENGTH, 400);
         
         //Placing the goBack button in the world
         goBack = new Button("<-- Go Back");
