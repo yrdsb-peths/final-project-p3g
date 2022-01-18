@@ -4,7 +4,7 @@ public class TableBorderSmall extends Actor
 {
     private GreenfootImage image;
     
-    public TableBorderSmall()
+    public TableBorderSmall() //Sets the image
     {
        image = drawLine();
        setImage(image);

@@ -10,7 +10,7 @@ public class GoalPost extends Actor
 {
     private GreenfootImage image;
     
-    public GoalPost()
+    public GoalPost() //Sets the image
     {
        image = drawLine();
        setImage(image);
