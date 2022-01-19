@@ -34,8 +34,13 @@ public class ComputerModeHighscores extends World
     
     //Buttons to determine the score placings
     private Button firstPlaceButton;
+    private Button firstScore;
+    
     private Button secondPlaceButton;
+    private Button secondScore;
+    
     private Button thirdPlaceButton;
+    private Button thirdScore;
     
     private Font comicFont = new Font ("Courier New", true, false, 60);
 
@@ -90,13 +95,19 @@ public class ComputerModeHighscores extends World
             }
         }
         
-        firstPlaceButton = new Button("1st Place: " + Integer.toString(scores[0]));
-        addObject(firstPlaceButton,400,50);
+        firstPlaceButton = new Button("1st Place: ");
+        addObject(firstPlaceButton,300,50);
+        firstScore = new Button(Integer.toString(scores[2]));
+        addObject(firstScore,500,50);
         
-        secondPlaceButton = new Button("2nd Place: " + Integer.toString(scores[1]));
-        addObject(secondPlaceButton,400,100);
+        secondPlaceButton = new Button("2nd Place: ");
+        addObject(secondPlaceButton,300,100);
+        secondScore = new Button(Integer.toString(scores[1]));
+        addObject(secondScore,500,100);
         
-        thirdPlaceButton = new Button("Total Score: " + Integer.toString(scores[2])); //Total Score is always last place (it is the difference of 1st place and last place)
-        addObject(thirdPlaceButton,400,150);
+        thirdPlaceButton = new Button("Total Score: "); //Total Score is always last place (it is the difference of 1st place and last place)
+        addObject(thirdPlaceButton,300,150);
+        thirdScore = new Button(Integer.toString(scores[0]));
+        addObject(thirdScore,500,150);
     }
 }
