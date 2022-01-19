@@ -26,6 +26,9 @@ public class ComputerMode extends World
     private TableBorderSmall border5;
     private TableBorderSmall border6;
     
+    public static int tableTop = 211;
+    public static int tableBottom = 590; 
+    
     //Paddles for both players
     private Paddle paddle1;
     private Paddle paddle2;
@@ -111,14 +114,24 @@ public class ComputerMode extends World
     public void act()
     {
         started(); //Loops the music
-        
+        puckMovement(); //Calls the puckMovement method which increases the score of a specific player based on which goal post it went into. The puck would then be set to the middle of the AirTable.   
+    
         //Updates the values on the ScoreBar
         scoreBar.update(playerScore, computerScore, totalScore); 
         
-        //Testing to see how numbers changes (delete this when fully implementing the score system)
-        playerScore += 2; 
-        computerScore++;
-        totalScore = playerScore - computerScore;
+        //If one of the players reaches a score of 7 first
+        //Stop the music and go to the TwoPlayerEndScreen world (which will display the winner and both the players' scores)
+        if(playerScore == 7) 
+        {
+            stopped(); 
+            Greenfoot.setWorld(new TwoPlayerEndScreen("Player", playerScore, computerScore)); 
+        }
+        
+        if(computerScore == 7) 
+        {
+            stopped();
+            Greenfoot.setWorld(new TwoPlayerEndScreen("Computer", playerScore, computerScore));
+        }
         
         //If the mouse clicks the goBackButton, then the user will be returned to the WelcomeWorld
         //And the music will stop
@@ -129,6 +142,36 @@ public class ComputerMode extends World
         }
     }
     
+    public void puckMovement()
+    {
+        if(puck.getX() > 970 && puck.goalCheck())
+        {
+            //Make the puck stationary
+            puck.setHorizMovement(0);
+            puck.setVertMovement(0);
+            
+            //Increase the score + update the left Player's Score
+            playerScore++;
+            
+            //Set the Puck back to it's defualt location
+            puck.setLocation(600,400);
+            puck.setGoalCheck(false);
+        }
+        
+        if(puck.getX() < 200 && puck.goalCheck())
+        {
+            //Make the puck stationary
+            puck.setHorizMovement(0);
+            puck.setVertMovement(0);
+            
+            //Increase the score + update the right Player's Score
+            computerScore++;
+            
+            //Set the Puck back to it's defualt location
+            puck.setLocation(600,400);
+            puck.setGoalCheck(false);
+        }
+    }
     public void started() //Method the loops the music
     {
         ComputerModeMusic.playLoop();

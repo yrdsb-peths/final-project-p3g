@@ -27,19 +27,19 @@ public class Paddle extends Actor
     private String left;
     private String right;
 
-    private int topBoundary = size/2;
-    private int bottomBoundary = 800 - size/2; //replace 800 with height of world
+    private int topBoundary = ComputerMode.tableTop;
+    private int bottomBoundary = ComputerMode.tableBottom; //replace 800 with height of world
     private int leftBoundary;
     private int rightBoundary;
 
-    private int arenaMidX = (leftBoundary+rightBoundary)/2;
-    private int arenaMidY = (topBoundary+bottomBoundary)/2;
+    private int arenaMidX = ComputerMode.WORLD_LENGTH/2;
+    private int arenaMidY = ComputerMode.WORLD_HEIGHT/2;
     
     private int hor = 0;
     private int vert = 0;
 
     public static int maxSpeed = 15;
-    public static int speed = 15;
+    private static int speed = 15;
     
     public static int timer = 0;
     
