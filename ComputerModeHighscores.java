@@ -79,7 +79,7 @@ public class ComputerModeHighscores extends World
           
     }
     
-    public void scoreBubbleSort(int[] scores)
+    public void scoreBubbleSort(int[] scores) //Sorts values from least to greatest
     {
         for(int i = 0; i < 3; i++)
         {
@@ -91,7 +91,6 @@ public class ComputerModeHighscores extends World
                     scores[j] = scores[j-1];
                     scores[j-1] = temp;
                 }
-                
             }
         }
         

@@ -124,8 +124,8 @@ public class ComputerMode extends World
         scoreBar.update(playerScore, computerScore, totalScore); 
         
         //Testing to see how numbers changes (will delete this when fully implementing the score system)
-        playerScore += 2; 
-        computerScore++;
+        playerScore += 3; 
+        computerScore +=2;
         totalScore = playerScore - computerScore;
         
         //If one of the players reaches a score of 7 first
@@ -134,13 +134,13 @@ public class ComputerMode extends World
         if(playerScore == 3000) 
         {
             stopped(); 
-            Greenfoot.setWorld(new TwoPlayerEndScreen("Player", playerScore, computerScore)); 
+            Greenfoot.setWorld(new ComputerModeHighscores(totalScore, playerScore, computerScore)); 
         }
         
         if(computerScore == 3000) 
         {
             stopped();
-            Greenfoot.setWorld(new TwoPlayerEndScreen("Computer", playerScore, computerScore));
+            Greenfoot.setWorld(new ComputerModeHighscores(totalScore, playerScore, computerScore));
         }
         
         
