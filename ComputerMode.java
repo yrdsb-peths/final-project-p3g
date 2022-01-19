@@ -43,6 +43,8 @@ public class ComputerMode extends World
     //World Transitions
     private Button goBackButton;
     
+    private Button endGameButton;
+    
     //Scorebar related stuff
     private ScoreBar scoreBar;
     private int playerScore;
@@ -108,7 +110,9 @@ public class ComputerMode extends World
         goBackButton = new Button ("<-- Go Back");
         addObject(goBackButton, 100, 750);
         
-        
+        //Button to end the game earlier
+        endGameButton = new Button("Stop Game");
+        addObject(endGameButton, 1100, 750);
     }
     
     public void act()
@@ -118,6 +122,11 @@ public class ComputerMode extends World
     
         //Updates the values on the ScoreBar
         scoreBar.update(playerScore, computerScore, totalScore); 
+        
+        //Testing to see how numbers changes (will delete this when fully implementing the score system)
+        playerScore += 2; 
+        computerScore++;
+        totalScore = playerScore - computerScore;
         
         //If one of the players reaches a score of 7 first
         //Stop the music and go to the TwoPlayerEndScreen world (which will display the winner and both the players' scores)
@@ -139,6 +148,12 @@ public class ComputerMode extends World
         {
             stopped();
             Greenfoot.setWorld(new WelcomeWorld());
+        }
+        
+        if(Greenfoot.mouseClicked(endGameButton))
+        {
+            stopped();
+            Greenfoot.setWorld(new ComputerModeHighscores(totalScore, playerScore, computerScore));
         }
     }
     
@@ -172,6 +187,7 @@ public class ComputerMode extends World
             puck.setGoalCheck(false);
         }
     }
+    
     public void started() //Method the loops the music
     {
         ComputerModeMusic.playLoop();
