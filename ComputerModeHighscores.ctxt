@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=ComputerModeHighscores
 comment0.text=\r\n\ Only\ the\ top\ 5\ scores\ will\ be\ displayed\r\n\ -After\ 6\ computer\ mode\ attempts,\ the\ bubble\ sort\ will\ check\ which\ ones\ are\ the\ top\ 5\r\n
-comment1.params=totalScore\ playerScore\ computerScore
-comment1.target=ComputerModeHighscores(int,\ int,\ int)
+comment1.params=playerScore\ computerScore
+comment1.target=ComputerModeHighscores(int,\ int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ TwoPlayerEndScreen\r\n
 comment2.params=
 comment2.target=void\ act()

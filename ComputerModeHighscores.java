@@ -51,7 +51,7 @@ public class ComputerModeHighscores extends World
     /**
      * Constructor for objects of class TwoPlayerEndScreen
      */
-    public ComputerModeHighscores(int totalScore, int playerScore, int computerScore)
+    public ComputerModeHighscores(int playerScore, int computerScore)
     {
         super(800, 600, 1); 
         
@@ -63,8 +63,8 @@ public class ComputerModeHighscores extends World
         playAgainButton = new Button("Play Again");
         addObject(playAgainButton,650,520);
         
-        //Adds the player's score to the arraylist
-        pointList.add(playerScore);
+        //Adds the player's score minus the computer's score
+        pointList.add(playerScore - computerScore);
         
         //moves the arraylist values into an int array called Scores
         for(int i = 0; i < scores.length; i++)

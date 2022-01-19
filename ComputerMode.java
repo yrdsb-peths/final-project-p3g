@@ -126,7 +126,6 @@ public class ComputerMode extends World
         //Testing to see how numbers changes (will delete this when fully implementing the score system)
         playerScore += 3; 
         computerScore +=2;
-        totalScore = playerScore - computerScore;
         
         //If one of the players reaches a score of 7 first
         //Stop the music and go to the TwoPlayerEndScreen world (which will display the winner and both the players' scores)
@@ -134,13 +133,13 @@ public class ComputerMode extends World
         if(playerScore == 3000) 
         {
             stopped(); 
-            Greenfoot.setWorld(new ComputerModeHighscores(totalScore, playerScore, computerScore)); 
+            Greenfoot.setWorld(new ComputerModeHighscores(playerScore, computerScore)); 
         }
         
         if(computerScore == 3000) 
         {
             stopped();
-            Greenfoot.setWorld(new ComputerModeHighscores(totalScore, playerScore, computerScore));
+            Greenfoot.setWorld(new ComputerModeHighscores(playerScore, computerScore));
         }
         
         
@@ -155,7 +154,7 @@ public class ComputerMode extends World
         if(Greenfoot.mouseClicked(endGameButton))
         {
             stopped();
-            Greenfoot.setWorld(new ComputerModeHighscores(totalScore, playerScore, computerScore));
+            Greenfoot.setWorld(new ComputerModeHighscores(playerScore, computerScore));
         }
     }
     
