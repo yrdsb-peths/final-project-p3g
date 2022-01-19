@@ -10,6 +10,7 @@ comment3.params=scores
 comment3.target=void\ scoreBubbleSort(int[])
 comment4.params=num
 comment4.target=void\ firstPlaceScore(int)
+comment4.text=\r\nMethods\ that\ adds\ an\ Button\ object\ to\ display\ the\ top\ 5\ scores\r\n
 comment5.params=num
 comment5.target=void\ secondPlaceScore(int)
 comment6.params=num

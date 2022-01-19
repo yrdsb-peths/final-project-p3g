@@ -59,23 +59,25 @@ public class ComputerModeHighscores extends World
         goBackButton = new Button("Go Back");
         addObject(goBackButton,150,520);
         
+        //To replay ComputerMode
         playAgainButton = new Button("Play Again");
         addObject(playAgainButton,650,520);
         
+        //Adds the player's score to the arraylist
         pointList.add(playerScore);
         
-
-    }
-
-    public void act()
-    {
+        //moves the arraylist values into an int array called Scores
         for(int i = 0; i < scores.length; i++)
         {
             scores[i] = pointList.get(i);
         }
           
+        //The scores from the "scores" array will be sorted from least to greatest with bubble sort.
         scoreBubbleSort(scores);
-        
+    }
+
+    public void act()
+    {   
         //If the goBack button is pressed, go back to WelcomeWorld
         if(Greenfoot.mouseClicked(goBackButton))        
         {
@@ -104,6 +106,8 @@ public class ComputerModeHighscores extends World
             }
         }
         
+        //If there are not 5 scores yet, then display the amount of scores there are
+        //If there are 5 or more scores, display the top 5 scores.
         if(scores.length == 1)
         {
             firstPlaceScore(scores[scores.length-1]);
@@ -137,6 +141,9 @@ public class ComputerModeHighscores extends World
 
     }
     
+    /**
+    *Methods that adds an Button object to display the top 5 scores
+    */
     public void firstPlaceScore(int num)
     {
         firstPlaceButton = new Button("1st Place: ");
