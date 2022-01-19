@@ -130,17 +130,19 @@ public class ComputerMode extends World
         
         //If one of the players reaches a score of 7 first
         //Stop the music and go to the TwoPlayerEndScreen world (which will display the winner and both the players' scores)
-        if(playerScore == 7) 
+        
+        if(playerScore == 3000) 
         {
             stopped(); 
             Greenfoot.setWorld(new TwoPlayerEndScreen("Player", playerScore, computerScore)); 
         }
         
-        if(computerScore == 7) 
+        if(computerScore == 3000) 
         {
             stopped();
             Greenfoot.setWorld(new TwoPlayerEndScreen("Computer", playerScore, computerScore));
         }
+        
         
         //If the mouse clicks the goBackButton, then the user will be returned to the WelcomeWorld
         //And the music will stop
