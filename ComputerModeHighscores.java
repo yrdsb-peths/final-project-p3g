@@ -1,18 +1,15 @@
 import greenfoot.*;
-import java.util.HashMap;
 import java.util.ArrayList;
 
 /**
- * Write a description of class TwoPlayerEndScreen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Only the top 5 scores will be displayed
+ * -After 6 computer mode attempts, the bubble sort will check which ones are the top 5
  */
 public class ComputerModeHighscores extends World 
 {
-    public ArrayList<Integer> pointList = new ArrayList<Integer>();
-    //public Hashmap<String,Integer> highscores = new HashMap<String,Integer>();
+    public static ArrayList<Integer> pointList = new ArrayList<Integer>();
     
+    public int[] scores = new int[pointList.size()];    
     
     //Buttons to go back (to the WelcomeWorld) or play again (TwoPlayerMode world)
     private Button goBackButton;
@@ -42,6 +39,12 @@ public class ComputerModeHighscores extends World
     private Button thirdPlaceButton;
     private Button thirdScore;
     
+    private Button fourthPlaceButton;
+    private Button fourthScore;
+    
+    private Button fifthPlaceButton;
+    private Button fifthScore;
+    
     private Font comicFont = new Font ("Courier New", true, false, 60);
 
     
@@ -59,13 +62,20 @@ public class ComputerModeHighscores extends World
         playAgainButton = new Button("Play Again");
         addObject(playAgainButton,650,520);
         
-        int[] scores = {totalScore, playerScore, computerScore};
+        pointList.add(playerScore);
         
-        scoreBubbleSort(scores);
+
     }
 
     public void act()
     {
+        for(int i = 0; i < scores.length; i++)
+        {
+            scores[i] = pointList.get(i);
+        }
+          
+        scoreBubbleSort(scores);
+        
         //If the goBack button is pressed, go back to WelcomeWorld
         if(Greenfoot.mouseClicked(goBackButton))        
         {
@@ -81,9 +91,9 @@ public class ComputerModeHighscores extends World
     
     public void scoreBubbleSort(int[] scores) //Sorts values from least to greatest
     {
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < scores.length; i++)
         {
-            for(int j = 1; j < 3; j++)
+            for(int j = 1; j < scores.length; j++)
             {
                 if(scores[j] < scores[j-1])
                 {
@@ -94,19 +104,77 @@ public class ComputerModeHighscores extends World
             }
         }
         
+        if(scores.length == 1)
+        {
+            firstPlaceScore(scores[scores.length-1]);
+        }
+        else if(scores.length == 2)
+        {
+            firstPlaceScore(scores[scores.length-1]);
+            secondPlaceScore(scores[scores.length-2]);
+        }
+        else if(scores.length == 3)
+        {
+            firstPlaceScore(scores[scores.length-1]);
+            secondPlaceScore(scores[scores.length-2]);
+            thirdPlaceScore(scores[scores.length-3]); 
+        }
+        else if(scores.length == 4)
+        {
+            firstPlaceScore(scores[scores.length-1]);
+            secondPlaceScore(scores[scores.length-2]);
+            thirdPlaceScore(scores[scores.length-3]);  
+            fourthPlaceScore(scores[scores.length-4]);
+        }
+        else if(scores.length >= 5)
+        {
+            firstPlaceScore(scores[scores.length-1]);
+            secondPlaceScore(scores[scores.length-2]);
+            thirdPlaceScore(scores[scores.length-3]);  
+            fourthPlaceScore(scores[scores.length-4]);
+            fifthPlaceScore(scores[scores.length-5]);
+        }
+
+    }
+    
+    public void firstPlaceScore(int num)
+    {
         firstPlaceButton = new Button("1st Place: ");
         addObject(firstPlaceButton,300,50);
-        firstScore = new Button(Integer.toString(scores[2]));
+        firstScore = new Button(Integer.toString(num));
         addObject(firstScore,500,50);
-        
+    }
+    
+    public void secondPlaceScore(int num)
+    {
         secondPlaceButton = new Button("2nd Place: ");
         addObject(secondPlaceButton,300,100);
-        secondScore = new Button(Integer.toString(scores[1]));
-        addObject(secondScore,500,100);
-        
-        thirdPlaceButton = new Button("Total Score: "); //Total Score is always last place (it is the difference of 1st place and last place)
+        secondScore = new Button(Integer.toString(num));
+        addObject(secondScore,500,100);  
+    }
+    
+    public void thirdPlaceScore(int num)
+    {
+        thirdPlaceButton = new Button("3rd Place "); 
         addObject(thirdPlaceButton,300,150);
-        thirdScore = new Button(Integer.toString(scores[0]));
+        thirdScore = new Button(Integer.toString(num));
         addObject(thirdScore,500,150);
     }
+    
+    public void fourthPlaceScore(int num)
+    {
+        fourthPlaceButton = new Button("4th Place "); 
+        addObject(fourthPlaceButton,300,200);
+        fourthScore = new Button(Integer.toString(num));
+        addObject(fourthScore,500,200);
+    }
+    
+    public void fifthPlaceScore(int num)
+    {
+        fifthPlaceButton = new Button("5th Place "); 
+        addObject(fifthPlaceButton,300,250);
+        fifthScore = new Button(Integer.toString(num));
+        addObject(fifthScore,500,250);
+    }
+
 }
