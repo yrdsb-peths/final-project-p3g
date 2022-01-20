@@ -4,6 +4,7 @@ import java.util.ArrayList;
 /**
  * Only the top 5 scores will be displayed
  * -After 6 computer mode attempts, the bubble sort will check which ones are the top 5
+ * -Must be played TWICE!!!! Before the 1st place score shows. And 3 times for the top 2 scores of the 3 to show
  */
 public class ComputerModeHighscores extends World 
 {
