@@ -46,9 +46,6 @@ public class ComputerModeHighscores extends World
     private Button fifthPlaceButton;
     private Button fifthScore;
     
-    private Font comicFont = new Font ("Courier New", true, false, 60);
-
-    
     /**
      * Constructor for objects of class TwoPlayerEndScreen
      */
@@ -89,7 +86,6 @@ public class ComputerModeHighscores extends World
         {        
             Greenfoot.setWorld(new ComputerMode());
         }
-          
     }
     
     public void scoreBubbleSort(int[] scores) //Sorts values from least to greatest
@@ -139,7 +135,6 @@ public class ComputerModeHighscores extends World
             fourthPlaceScore(scores[scores.length-4]);
             fifthPlaceScore(scores[scores.length-5]);
         }
-
     }
     
     /**
@@ -184,5 +179,4 @@ public class ComputerModeHighscores extends World
         fifthScore = new Button(Integer.toString(num));
         addObject(fifthScore,500,250);
     }
-
 }
