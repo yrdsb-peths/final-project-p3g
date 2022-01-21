@@ -34,7 +34,7 @@ public class Button extends Actor
         setImage (image);
     } 
 
-   
+    //Drawing the button
     private void draw () 
     {
         image.setColor(Color.WHITE);

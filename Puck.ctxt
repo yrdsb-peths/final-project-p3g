@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Puck
+comment1.params=
+comment1.target=Puck()
+comment10.params=verticalMovement
+comment10.target=void\ setVertMovement(int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=greenfoot.GreenfootImage\ drawPuck()
+comment4.params=
+comment4.target=void\ bounceMovements()
+comment5.params=
+comment5.target=boolean\ goalCheck()
+comment6.params=passedGoal
+comment6.target=void\ setGoalCheck(boolean)
+comment7.params=
+comment7.target=int\ getHorizMovement()
+comment8.params=horizMovement
+comment8.target=void\ setHorizMovement(int)
+comment9.params=
+comment9.target=int\ getVertMovement()
+numComments=11

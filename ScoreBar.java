@@ -39,27 +39,20 @@ public class ScoreBar extends Actor
      * Updates this ScoreBar with game stats. This method should be
      * re-written to work with your specific labels/values
      * 
-     * @param alive     current number of ...
-     * @param maxAlive  largest number of ...
-     * @param dead      number of ...
-     * @param ...   
+     * @param playerScore     Amount of scores the player has.
+     * @param computerScore   Amount of scores the computer has.
+     * @param totalScore      Total score of the player (playerScore - computerScore)
      */
-    public void update(int level, int wordsTyped, int livesLeft, int score)
-    {
-        // In order to make uniform sizes and preceding zeros:
-        String levelString, wordsTypedString, livesLeftString;
-        // If there is only one digit
-
-        levelString = zeroAdder (level, 3);
-        wordsTypedString = zeroAdder (wordsTyped, 3);
-        livesLeftString = zeroAdder (livesLeft, 2);
-
+    public void update(int playerScore, int computerScore, int totalScore)
+    {  
+        String playerPoints, computerPoints, totalPoints;
         
-        text = "Score:  " +  score + "   Level: " + levelString + "  Words Typed " + wordsTypedString + "  Lives: " + livesLeftString;
-        // Now that we have built the text to output...
-        // this.update (String) calls the other version of update(), in this case
-        // update(String) - see below
-        this.update (text);
+        playerPoints = zeroAdder (playerScore, 3);
+        computerPoints = zeroAdder (computerScore, 3);
+        totalPoints = zeroAdder (totalScore, 3);
+        
+        text = "Player Score: " +  playerPoints + "   Computer Score " + computerPoints + "   Total Score: " + totalPoints;
+        this.update (text); 
     }
 
     /**
