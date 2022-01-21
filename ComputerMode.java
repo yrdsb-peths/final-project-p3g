@@ -123,14 +123,7 @@ public class ComputerMode extends World
         //Updates the values on the ScoreBar
         scoreBar.update(playerScore, computerScore, totalScore); 
         
-        //Testing to see how numbers changes (will delete this when fully implementing the score system)
-        playerScore += 3; 
-        computerScore +=2;
-        totalScore = playerScore - computerScore;
-        
-        //If one of the players reaches a score of 7 first
         //Stop the music and go to the TwoPlayerEndScreen world (which will display the winner and both the players' scores)
-        
         if(playerScore == 3000) 
         {
             stopped(); 
