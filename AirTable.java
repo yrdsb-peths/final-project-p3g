@@ -71,6 +71,7 @@ public class AirTable extends Actor
     }
     
     private void drawCircles(int N, int x, int y, int radius){
+        //recursivley draws circles
         if(N==0) return;
         table.setColor(lines);
         table.fillOval(x-radius/2,y-radius/2,radius,radius);
