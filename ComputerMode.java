@@ -124,13 +124,13 @@ public class ComputerMode extends World
         scoreBar.update(playerScore, computerScore, totalScore); 
         
         //Stop the music and go to the TwoPlayerEndScreen world (which will display the winner and both the players' scores)
-        if(playerScore == 3000) 
+        if(playerScore == 30) 
         {
             stopped(); 
             Greenfoot.setWorld(new ComputerModeHighscores(playerScore, computerScore)); 
         }
         
-        if(computerScore == 3000) 
+        if(computerScore == 30) 
         {
             stopped();
             Greenfoot.setWorld(new ComputerModeHighscores(playerScore, computerScore));

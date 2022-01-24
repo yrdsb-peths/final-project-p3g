@@ -54,18 +54,18 @@ public class Puck extends Actor
             {
                 puckSound.play();
                 
-                //horizMovement = horizMovement + 5;
-                //vertMovement = getY() - Paddle.getY();
-                //vertMovement = vertMovement/10;
                 int vertDir = p.getVert();
                 int horizDir = p.getHoriz();
                 
                 xSpeed = (p.maxSpeed * horizDir) - xSpeed;
                 
                 ySpeed = ySpeed - (p.maxSpeed * vertDir / 2);
-                int yDir = Integer.signum(ySpeed);
-                ySpeed = Math.min(Math.abs(ySpeed), 9) * yDir;
                 
+                int xDir = Integer.signum(xSpeed);
+                int yDir = Integer.signum(ySpeed);
+                
+                xSpeed = Math.min(Math.abs(xSpeed), 12) * xDir;
+                ySpeed = Math.min(Math.abs(ySpeed), 9) * yDir;
             }
         }
         catch(ClassCastException e)
