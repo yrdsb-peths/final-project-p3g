@@ -43,7 +43,7 @@ public class Paddle extends Actor
     
     public static int timer = 0;
     
-    private static List<Puck> list = new ArrayList<Puck>(); 
+    public static List<Puck> list = new ArrayList<Puck>(); 
     
     public Paddle(String type){ // "if using this constructor, please use (left,right, or cpu) as the parameters"
         role = type; //used to decide how the paddle will move
@@ -98,9 +98,10 @@ public class Paddle extends Actor
     {
         //determines which "control scheme" the active paddle will use
         if(!role.equals("cpu")){
-            setDirection();
+            setDirection(); //for players
         } else {
-            chasePuck(); 
+            chasePuck();  //for cpu
+            translate();
         }
         count();
     }    
@@ -123,7 +124,7 @@ public class Paddle extends Actor
         }
     }
     
-    public void setDirection(){//sets rotation of paddle using keyboard, in 8 directions 
+    private void setDirection(){//sets rotation of paddle using keyboard, in 8 directions 
         if(Greenfoot.isKeyDown(up)){
             vert = 1;
         } else if(Greenfoot.isKeyDown(down)){
@@ -220,29 +221,57 @@ public class Paddle extends Actor
         }
     }
 
-    public void chasePuck(){// for cpu -- if puck is on right half of world, chase, else return to a specified (or random) position
+    private void chasePuck(){// for cpu -- if puck is on right half of world, chase, else return to a specified (or random) position
         list = getWorld().getObjects(Puck.class);
+        int targetX;
+        int targetY;
         
         if(!list.isEmpty()){
             Puck puck = list.get(0);
             if(puck.getX() > leftBoundary){
                 //moves towards puck while accelerating
-                turnTowards(puck.getX(),puck.getY());
-                accelerate();
-                move(speed);
-            } else {
-                int targetX = rightBoundary - size*2;
-                speed = 0; //resets speed 
+                targetX = puck.getX();
+                targetY = puck.getY();
                 
-                //heads to specified position -- can be random if it will be more fun?
-                turnTowards(targetX,arenaMidY);
-                if(getX() != targetX && getY()!= arenaMidY){
+            } else {
+                targetX = rightBoundary - size*2;
+                targetY = arenaMidY;
+                
+            }
+            
+            //heads to specified position -- can be random if it will be more fun?
+            if(getX() != targetX && getY()!= targetY){
+                turnTowards(targetX,targetY);
+                if(Math.abs(targetX-getX()) < maxSpeed || Math.abs(targetY-getY()) < maxSpeed)
+                { 
+                    move(1);
+                } else {
                     move(maxSpeed);
                 }
             }
         }
     }
 
+    private void translate(){ //for cpu -- to help determine the collision with the puck
+        int angle = getRotation();
+        
+        if(angle > 90 && angle < 270){
+            hor = -1;
+        } else if(angle > 270 || angle <90){
+            hor = 1;
+        } else {
+            hor = 0;
+        }
+        
+        if(angle > 0 && angle < 180){
+            vert = -1;
+        } else if(angle > 180 && angle < 360){
+            vert = 1;
+        } else {
+            vert = 0;
+        }
+    }
+    
     private void draw () 
     {
         image = new GreenfootImage(size,size); 
