@@ -27,8 +27,8 @@ public class Paddle extends Actor
     private String left;
     private String right;
 
-    private int topBoundary = ComputerMode.tableTop;
-    private int bottomBoundary = ComputerMode.tableBottom; //replace 800 with height of world
+    private int topBoundary = ComputerMode.tableTop-size/2 ;
+    private int bottomBoundary = ComputerMode.tableBottom + size/2; //replace 800 with height of world
     private int leftBoundary;
     private int rightBoundary;
 
@@ -58,8 +58,8 @@ public class Paddle extends Actor
             left = "a";
             right = "d";
 
-            leftBoundary = size;
-            rightBoundary = 600-size/2; //replace with halfway point of world length
+            leftBoundary = size/2+15;
+            rightBoundary = arenaMidX-size/2; 
         }else {
             base = blue;
             center = darkBlue;
@@ -69,8 +69,8 @@ public class Paddle extends Actor
             left = "left";
             right = "right";
 
-            leftBoundary = 600 + size/2; //replace with halfway point of world length;
-            rightBoundary = 1200-size/2; // replace with world length
+            leftBoundary = arenaMidX + size/2; 
+            rightBoundary = ComputerMode.WORLD_LENGTH-size/2-15; 
         }
 
         draw();
