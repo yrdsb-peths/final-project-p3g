@@ -69,15 +69,14 @@ public class Puck extends Actor
                 int vertDir = p.getVert();
                 int horizDir = p.getHoriz();
                 
-                
+                //Codes to tinker with the speed of the puck in the x and y direction
                 xSpeed = (p.maxSpeed * horizDir) - xSpeed;
-                
                 ySpeed = ySpeed - (p.maxSpeed * vertDir / 2);
                 
                 int xDir = Integer.signum(xSpeed); //If xSpeed is any number that is positive, then xDir will become 1. Else, it will be -1.
                 int yDir = Integer.signum(ySpeed); //If ySpeed is any number that is positive, then yDir will become 1. Else, it will be -1.
                 
-                //Codes to tinker with the speed of the puck
+                //Codes to put a speed limit in the x and y direction as well as well as determining if it will go up, down, left, right.
                 xSpeed = Math.min(Math.abs(xSpeed), 12) * xDir; 
                 ySpeed = Math.min(Math.abs(ySpeed), 9) * yDir;
             }
