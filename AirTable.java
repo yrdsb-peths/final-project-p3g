@@ -56,17 +56,6 @@ public class AirTable extends Actor
         table.fillOval(-63, height/2 - 81, 126,162);
         table.fillOval(width-63, height/2 - 81, 126,162);
         
-        /**
-        //Left-side of table
-        table.fillRect(10, height/2 + 130, 70, 10);
-        table.fillRect(10, height/2 - 130, 70, 10);
-        
-        //Right-side of table
-        table.setColor(Color.BLACK);
-        table.fillRect(width-90, height/2 + 130, width-20, 10);
-        table.fillRect(width-90, height/2 - 130, width-20, 10);
-        **/
-        
         return table;
     }
     

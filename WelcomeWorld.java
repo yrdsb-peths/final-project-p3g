@@ -28,11 +28,6 @@ public class WelcomeWorld extends World
         //Size of the world (Cell by Cell)
         super(800, 600, 1); 
         
-        //background.setFont(comicFont);
-        //background.setColor(Color.WHITE);
-        //background.drawString ("Air Hockey",200, 200);
-        //setBackground(background);
-        
         //Placing the world buttons.
         twoPlayerButton = new Button("Two-Player");
         addObject(twoPlayerButton, 200, 400);

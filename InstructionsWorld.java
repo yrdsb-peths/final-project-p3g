@@ -16,8 +16,6 @@ public class InstructionsWorld extends World
     //World transitions
     private Button returnButton;
     
-    //private Font comicFont = new Font ("Courier New", true, false, 60);
-    
     //Background Song
     private GreenfootSound InstructionsMusic = new GreenfootSound("CP - Pizza Parlor.mp3");
     
@@ -30,14 +28,6 @@ public class InstructionsWorld extends World
     {    
         //Size of the world (Cell by Cell)
         super(800, 600, 1); 
-        
-        //Set instruction world 
-        //background = new GreenfootImage("table.png");   
-        //setBackground(background);
-        //background.setFont(comicFont);
-        //Draw instruction title
-        //background.setColor(Color.WHITE);
-        //background.drawString ("Instructions",170, 70);
         
         //Draw two buttons
         returnButton = new Button ("<-- Go Back");
