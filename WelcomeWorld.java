@@ -4,6 +4,9 @@ public class WelcomeWorld extends World
 /**
  * A world that allows for people to decide whether to play two-player (TwoPlayerMode),
  * computer mode (ComputerMode), or go to the instructions screen (InstructionsWorld).
+ * 
+ * Credits
+ * -Jump Up, Super Start Remix Super Mario Odyssey --Youtube Title--> Jump Up, Super Star! Remix- Super Mario Odyssey- The Living Tombstone --Link-->https://www.youtube.com/watch?v=1bZtCt_Siro
  */
 {
     //World buttons
