@@ -1,10 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class GoalPost here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Image for the GoalPost
  */
 public class GoalPost extends Actor  
 {

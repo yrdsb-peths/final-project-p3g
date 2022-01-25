@@ -1,6 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Button extends Actor
+/**
+ * Button referenced from Jordan Cohen
+ */
 {
     public static final double FONT_RATIO = 0.58;
     

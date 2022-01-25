@@ -1,10 +1,7 @@
 import greenfoot.*;
 
 /**
- * Write a description of class TableBorder here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Image for the TableBorder
  */
 public class TableBorder extends Actor
 {

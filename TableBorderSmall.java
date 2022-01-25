@@ -1,6 +1,9 @@
 import greenfoot.*;
 
 public class TableBorderSmall extends Actor
+/**
+ * Image for a smaller version of the TableBorder
+ */
 {
     private GreenfootImage image;
     
