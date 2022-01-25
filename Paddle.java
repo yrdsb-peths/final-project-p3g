@@ -240,7 +240,7 @@ public class Paddle extends Actor
             }
             
             //heads to specified position -- can be random if it will be more fun?
-            if(getX() != targetX && getY()!= targetY){
+            if(getX() != targetX || getY()!= targetY){
                 turnTowards(targetX,targetY);
                 if(Math.abs(targetX-getX()) < maxSpeed || Math.abs(targetY-getY()) < maxSpeed)
                 { 
