@@ -8,8 +8,10 @@ import java.util.ArrayList;
  */
 public class ComputerModeHighscores extends World 
 {
+    //ArrayList to store the total scores (player's score - computer's score), as more games are played.
     public static ArrayList<Integer> pointList = new ArrayList<Integer>();
     
+    //An int array used to convert the stuff in ArrayList to an int array.
     public int[] scores = new int[pointList.size()];    
     
     //Buttons to go back (to the WelcomeWorld) or play again (TwoPlayerMode world)
@@ -138,7 +140,7 @@ public class ComputerModeHighscores extends World
     }
     
     /**
-    *Methods that adds an Button object to display the top 5 scores
+    * Methods that adds an Button object to display the top 5 scores
     */
     public void firstPlaceScore(int num)
     {
