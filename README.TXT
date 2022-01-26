@@ -47,9 +47,9 @@ Credits:
 -->Images 
    ->Instructions World
      -WASD key image --Link--> https://wallpaperaccess.com/full/4624227.png
-     -Arrow keys image --Link--> https://media.istockphoto.com/photos/single-black-keys-of-keyboard-with-different-letters-picture-id1020438840k=20&m=1020438840&s=612x612&w=0&h=3G1X84b-Ljq6o9lFmxWFbBShURPPbAevCtq6whlw9qk=
+     -Arrow keys image --Link--> https://media.istockphoto.com/photos/single-black-keys-of-keyboard-with-different-letters-picture-id1020438840?k=20&m=1020438840&s=612x612&w=0&h=3G1X84b-Ljq6o9lFmxWFbBShURPPbAevCtq6whlw9qk=
    ->Welcome World
-     -Fiery Puck image --Link--> https://media.istockphoto.com/photos/hockey-puck-picture-id179116594k=20&m=179116594&s=612x612&w=0&h=Zg3qWbfhyLt3bnpjDYXd52d3k6fAZ1QyWcyjMoYXQwU=
+     -Fiery Puck image --Link--> https://media.istockphoto.com/photos/hockey-puck-picture-id179116594?k=20&m=179116594&s=612x612&w=0&h=Zg3qWbfhyLt3bnpjDYXd52d3k6fAZ1QyWcyjMoYXQwU=
      -Flame image --Link--> https://t4.ftcdn.net/jpg/00/45/48/15/240_F_45481569_9pSvUWXde83qEmEXqHztj71EwQVfo1ao.jpg
     
 
