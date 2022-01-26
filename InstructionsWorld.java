@@ -39,7 +39,7 @@ public class InstructionsWorld extends World
         returnButton = new Button ("<-- Go Back");
         
         //Set location for buttons
-        addObject(returnButton, 100, 570);
+        addObject(returnButton, 110, 500);
     }
     
     public void act() 
