@@ -7,6 +7,9 @@ public class WelcomeWorld extends World
  * 
  * Credits
  * -Jump Up, Super Start Remix Super Mario Odyssey --Youtube Title--> Jump Up, Super Star! Remix- Super Mario Odyssey- The Living Tombstone --Link-->https://www.youtube.com/watch?v=1bZtCt_Siro
+ * 
+ * -Fiery Puck image --Link--> https://media.istockphoto.com/photos/hockey-puck-picture-id179116594?k=20&m=179116594&s=612x612&w=0&h=Zg3qWbfhyLt3bnpjDYXd52d3k6fAZ1QyWcyjMoYXQwU=
+ * -Flame image --Link--> https://t4.ftcdn.net/jpg/00/45/48/15/240_F_45481569_9pSvUWXde83qEmEXqHztj71EwQVfo1ao.jpg
  */
 {
     //World buttons
