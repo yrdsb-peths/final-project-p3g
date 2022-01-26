@@ -20,8 +20,6 @@ public class WelcomeWorld extends World
     //Background Song
     private GreenfootSound WelcomeMusic = new GreenfootSound("Jump Up, Super Start Remix Super Mario Odyssey.mp3");
     
-    //private Font comicFont = new Font ("Courier New", true, false, 60);
-    
     /**
      * Constructor for objects of class WelcomeWorld.
      * 
@@ -31,15 +29,19 @@ public class WelcomeWorld extends World
         //Size of the world (Cell by Cell)
         super(800, 600, 1); 
         
+        //Image for the background of WelcomeWorld
+        background = new GreenfootImage("WelcomeWorld.png");
+        setBackground(background);
+        
         //Placing the world buttons.
         twoPlayerButton = new Button("Two-Player");
-        addObject(twoPlayerButton, 200, 400);
+        addObject(twoPlayerButton, 180, 450);
         
         computerButton = new Button("Computer Mode");
-        addObject(computerButton, 600, 400);
+        addObject(computerButton, 620, 450);
         
         instructionsButton = new Button("Instructions");
-        addObject(instructionsButton, 400, 500);
+        addObject(instructionsButton, 400, 550);
 
     }
     

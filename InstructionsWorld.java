@@ -31,7 +31,7 @@ public class InstructionsWorld extends World
         //Size of the world (Cell by Cell)
         super(800, 600, 1); 
         
-        //Images of the instructions for Instructions world
+        //Image of the instructions for Instructions world
         background = new GreenfootImage("Instructions World.png");
         setBackground(background);
         
