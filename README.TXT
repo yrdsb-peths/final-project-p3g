@@ -43,4 +43,10 @@ Credits:
    -ComputerMode: --YouTube Title--> Super Smash Bros Ultimate - Lifelight (Remix feat. Slyleaf)--Link--> https://www.youtube.com/watch?v=V7EJrOIm6Ro
    -InstructionsWorld: --Youtube Tite--> Club Penguin Music - Pizza Parlor --Link--> https://www.youtube.com/watch?v=srNKLDAt3Pk
    -(Puck Sound) "Air hockey mallet, hit puck, scrape, table" --Link--> https://www.soundsnap.com/tags/air_hockey
+   
+-->Images
+   -Instructions World
+    -WASD key image --Link--> https://wallpaperaccess.com/full/4624227.png
+    -Arrow keys image --Link--> https://media.istockphoto.com/photos/single-black-keys-of-keyboard-with-different-letters-picture-id1020438840    
+     k=20&m=1020438840&s=612x612&w=0&h=3G1X84b-Ljq6o9lFmxWFbBShURPPbAevCtq6whlw9qk=
 
