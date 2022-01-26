@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=InstructionsWorld
-comment0.text=\r\n\ InstructionsWorld\r\n\ -Gives\ a\ breif\ explanation\ of\ how\ the\ game\ should\ be\ played\r\n\ \r\n\ Credit\r\n\ -CP\ -\ Pizza\ Parlor\ --Youtube\ Tite-->\ Club\ Penguin\ Music\ -\ Pizza\ Parlor\ --Link-->\ https\://www.youtube.com/watch?v\=srNKLDAt3Pk\r\n\r\n
+comment0.text=\r\n\ InstructionsWorld\r\n\ -Gives\ a\ breif\ explanation\ of\ how\ the\ game\ should\ be\ played\r\n\ \r\n\ Credit\r\n\ -CP\ -\ Pizza\ Parlor\ --Youtube\ Tite-->\ Club\ Penguin\ Music\ -\ Pizza\ Parlor\ --Link-->\ https\://www.youtube.com/watch?v\=srNKLDAt3Pk\r\n\r\n\ -WASD\ key\ image\ --Link-->\ https\://wallpaperaccess.com/full/4624227.png\r\n\ -Arrow\ keys\ image\ --Link-->\ https\://media.istockphoto.com/photos/single-black-keys-of-keyboard-with-different-letters-picture-id1020438840?k\=20&m\=1020438840&s\=612x612&w\=0&h\=3G1X84b-Ljq6o9lFmxWFbBShURPPbAevCtq6whlw9qk\=\r\n
 comment1.params=
 comment1.target=InstructionsWorld()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ InstructionWorld.\r\n\ \r\n
